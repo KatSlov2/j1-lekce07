@@ -92,7 +92,8 @@ public class Svatky {
      */
     public int getPocetJmen() {
         //TODO
-        return 0;
+//        return 0;
+        return svatky.size();
     }
 
     /**
@@ -114,7 +115,7 @@ public class Svatky {
     public void pridejSvatek(String jmeno, MonthDay denMesic) {
         //TODO
 
-                svatky.put(jmeno, MonthDay.of(den,mesic));
+                svatky.put(jmeno, denMesic);
     }
 
     /**
@@ -126,6 +127,7 @@ public class Svatky {
      */
     public void pridejSvatek(String jmeno, int den, int mesic) {
         //TODO
+        pridejSvatek(jmeno,MonthDay.of(den,mesic));
     }
 
     /**
@@ -137,6 +139,7 @@ public class Svatky {
      */
     public void pridejSvatek(String jmeno, int den, Month mesic) {
         //TODO
+        pridejSvatek(jmeno, MonthDay.of(mesic,den));
     }
 
     /**
@@ -146,5 +149,6 @@ public class Svatky {
      */
     public void smazSvatek(String jmeno) {
         //TODO
+        svatky.remove(jmeno);
     }
 }
