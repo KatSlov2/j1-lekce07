@@ -109,11 +109,11 @@ class SvatkyTest {
     void smazatSvatek() {
         //TODO Zkontrolovat, že po smazání bude počet svátků odpovídat novému počtu.
         Svatky svatky = new Svatky ();
-        int pocetJmen = svatky.getSeznamJmen().size();
-        svatky.smazSvatek();
 
-        assertEquals(pocetJmen, vysledekPo);
-        assert
+        svatky.smazSvatek("Nataša");
+        int pocetJmen = svatky.getSeznamJmen().size();
+
+        assertEquals(37, pocetJmen);
 
     }
 }
