@@ -113,7 +113,7 @@ class SvatkyTest {
         svatky.smazSvatek("Nataša");
         int pocetJmen = svatky.getSeznamJmen().size();
 
-        assertEquals(37, pocetJmen);
+        assertEquals(36, pocetJmen);
 
     }
 }
