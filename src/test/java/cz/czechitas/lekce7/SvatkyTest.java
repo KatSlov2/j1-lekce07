@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.Month;
 import java.time.MonthDay;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -40,7 +41,8 @@ class SvatkyTest {
     void getPocetJmen() {
         //TODO Otestovat, že vrací počet jmen, která máme v seznamu
         Svatky svatky = new Svatky ();
-        assertNotNull(svatky.getPocetJmen());
+        int pocetJmen = svatky.getPocetJmen();
+        assertEquals(37, pocetJmen);
     }
 
     /**
@@ -50,6 +52,10 @@ class SvatkyTest {
     void getSeznamJmen() {
         //TODO Zkontrolovat, že seznam jmen má správný počet položek.
         Svatky svatky = new Svatky ();
+        int pocetJmen = 37;
+        int vysledek = svatky.getSeznamJmen().size();
+        assertEquals(pocetJmen, vysledek);
+
     }
 
     /**
@@ -59,6 +65,13 @@ class SvatkyTest {
     void pridatSvatekDenMesicInt() {
         //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
         Svatky svatky = new Svatky ();
+
+        svatky.pridejSvatek("Laura", 1, 6);
+
+        assertEquals(true, svatky.jeVSeznamu("Laura"));
+
+        assertEquals(MonthDay.of(1, 6), svatky.vratKdyMaSvatek("Laura"));
+
     }
 
     /**
@@ -68,6 +81,11 @@ class SvatkyTest {
     void pridatSvatekDenMesicMonth() {
         //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
         Svatky svatky = new Svatky ();
+        svatky.pridejSvatek("Laura", 1, Month.JUNE);
+
+        assertEquals(true, svatky.jeVSeznamu("Laura"));
+
+        assertEquals(MonthDay.of(Month.JUNE,1), svatky.vratKdyMaSvatek("Laura"));
     }
 
     /**
@@ -77,6 +95,11 @@ class SvatkyTest {
     void prridatSvatekMonthDay() {
         //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
         Svatky svatky = new Svatky ();
+        svatky.pridejSvatek("Laura",MonthDay.of(Month.JUNE,1));
+
+        assertEquals(true, svatky.jeVSeznamu("Laura"));
+
+        assertEquals(MonthDay.of(Month.JUNE,1), svatky.vratKdyMaSvatek("Laura"));
     }
 
     /**
@@ -86,5 +109,11 @@ class SvatkyTest {
     void smazatSvatek() {
         //TODO Zkontrolovat, že po smazání bude počet svátků odpovídat novému počtu.
         Svatky svatky = new Svatky ();
+        int pocetJmen = svatky.getSeznamJmen().size();
+        svatky.smazSvatek();
+
+        assertEquals(pocetJmen, vysledekPo);
+        assert
+
     }
 }
