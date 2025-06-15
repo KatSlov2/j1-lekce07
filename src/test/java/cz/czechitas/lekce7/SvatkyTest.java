@@ -71,7 +71,6 @@ class SvatkyTest {
         assertEquals(true, svatky.jeVSeznamu("Laura"));
 
         assertEquals(MonthDay.of(6, 1), svatky.vratKdyMaSvatek("Laura"));
-
     }
 
     /**
