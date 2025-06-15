@@ -66,11 +66,11 @@ class SvatkyTest {
         //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
         Svatky svatky = new Svatky ();
 
-        svatky.pridejSvatek("Laura", 1, 6);
+        svatky.pridejSvatek("Laura", 6, 1);
 
         assertEquals(true, svatky.jeVSeznamu("Laura"));
 
-        assertEquals(MonthDay.of(1, 6), svatky.vratKdyMaSvatek("Laura"));
+        assertEquals(MonthDay.of(6, 1), svatky.vratKdyMaSvatek("Laura"));
 
     }
 

@@ -127,7 +127,7 @@ public class Svatky {
      */
     public void pridejSvatek(String jmeno, int den, int mesic) {
         //TODO
-        pridejSvatek(jmeno,MonthDay.of(den,mesic));
+        pridejSvatek(jmeno,MonthDay.of(mesic,den));
     }
 
     /**
